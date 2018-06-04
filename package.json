@@ -1,33 +1,62 @@
 {
   "name": "vue-date",
   "version": "1.1.10",
-  "description": "datepicker component for Vue.js",
-  "repository": "showonne/vue-date",
-  "main": "lib/index.js",
   "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build -t wc -n datepicker ./src/main.js",
     "test": "exit 0",
+    "lint": "vue-cli-service lint",
+    "lint:fix": "vue-cli-service lint --fix",
     "dev": "poi index.js",
     "docs": "poi build index.js --out-dir docs --public-path /vue-date",
-    "build": "webpack",
     "prepublishOnly": "npm run build"
   },
+  "dependencies": {
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "@babel/preset-stage-0": "^7.0.0-beta.49",
+    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
+    "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
+    "@vue/cli-service": "^3.0.0-beta.15",
+    "@vue/eslint-config-prettier": "^3.0.0-beta.15",
+    "@vue/eslint-config-standard": "^3.0.0-beta.15",
+    "less": "^3.0.2",
+    "less-loader": "^4.1.0",
+    "lint-staged": "^6.0.0",
+    "poi": "^10.1.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "main": "lib/index.js",
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
+  "author": "showonne",
+  "license": "MIT",
+  "repository": "showonne/vue-date",
+  "description": "datepicker component for Vue.js",
   "files": [
     "src"
   ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
   "keywords": [
     "datepicker",
     "vue",
     "date"
-  ],
-  "author": "showonne",
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.0.0-beta.46",
-    "@babel/preset-env": "^7.0.0-beta.46",
-    "@babel/preset-stage-0": "^7.0.0-beta.46",
-    "less": "^3.0.2",
-    "less-loader": "^4.1.0",
-    "poi": "^10.1.5",
-    "webpack-cli": "^2.1.2"
-  }
+  ]
 }

@@ -35,72 +35,72 @@
 </template>
 
 <script>
-    import datepicker from './Datepicker.vue'
-    export default {
-        name: 'Demo',
-        data () {
-            return {
-                langList: [
-                    {value: 'en', label: 'English'},
-                    {value: 'zh-cn', label: 'Chinese'},
-                    {value: 'uk', label: 'Ukrainsk'},
-                    {value: 'es', label: 'Spanish'}
-                ],
-                language:"en",
-                selected: '2016-08-03',
-                start: '2016-01-01',
-                end: '',
-                range: ['2016-01-01', '2016-01-11'],
-                init: '2016-12-26',
-                event_date: {
-                    date: '',
-                    range: false
-                }
+import datepicker from './Datepicker.vue'
+export default {
+    name: 'Demo',
+    data () {
+        return {
+            langList: [
+                { value: 'en', label: 'English' },
+                { value: 'zh-cn', label: 'Chinese' },
+                { value: 'uk', label: 'Ukrainsk' },
+                { value: 'es', label: 'Spanish' }
+            ],
+            language: 'en',
+            selected: '2016-08-03',
+            start: '2016-01-01',
+            end: '',
+            range: ['2016-01-01', '2016-01-11'],
+            init: '2016-12-26',
+            event_date: {
+                date: '',
+                range: false
             }
+        }
+    },
+    methods: {
+        change (key, value) {
+            console.log(key, value)
         },
-        methods: {
-            change(key, value) {
-                console.log(key, value)
-            },
-            clear() {
-                this.init = ' '
-            },
-            updateEventDate(val) {
-                console.log(val)
-            }
+        clear () {
+            this.init = ' '
         },
-        mounted() {
-            this.range = ['2016-01-02', '2016-01-11']
-        },
-        components: { datepicker }
-    }
+        updateEventDate (val) {
+            console.log(val)
+        }
+    },
+    mounted () {
+        this.range = ['2016-01-02', '2016-01-11']
+    },
+    components: { datepicker }
+}
 </script>
 
 <style>
-    .btn{
-        margin-top: 20px;
-    }
-    #app{
-        width: 750px;
-        margin: 0 auto;
-        border: 1px solid #ccc;
-        padding: 10px;
-        min-height: 1280px;
-        box-sizing: border-box;
-    }
-    .picker{
-        width: 200px;
-    }
-    .picker-range{
-        width: 220px;
-    }
-    .range{
-        display: flex;
-        justify-content: space-around;
-    }
-    b{
-        font-weight: 800;
-        font-size: 16px;
-        color: red;
-    }
+.btn {
+  margin-top: 20px;
+}
+#app {
+  width: 750px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 1280px;
+  box-sizing: border-box;
+}
+.picker {
+  width: 200px;
+}
+.picker-range {
+  width: 220px;
+}
+.range {
+  display: flex;
+  justify-content: space-around;
+}
+b {
+  font-weight: 800;
+  font-size: 16px;
+  color: red;
+}
 </style>
